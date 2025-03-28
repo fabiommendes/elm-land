@@ -2,6 +2,7 @@ import { watch } from 'chokidar'
 import { join } from 'path'
 import { createServer, loadEnv, build as _build } from 'vite'
 import ElmVitePlugin from 'vite-plugin-elm-watch'
+import TailwindcssVitePlugin from '@tailwindcss/vite'
 import * as ElmErrorJson from 'vite-plugin-elm-watch/src/elm-error-json.js'
 import * as TypeScriptPlugin from './vite-plugins/typescript/index.js'
 import { Codegen } from './codegen.js'
@@ -238,7 +239,8 @@ let runServer = async (options) => {
           mode: debug ? 'debug' : 'standard',
           isBodyPatchEnabled: false
         }),
-        ElmLandIndexHtml.plugin()
+        ElmLandIndexHtml.plugin(),
+        TailwindcssVitePlugin(),
       ],
       logLevel: 'silent',
       appType: 'spa'
@@ -504,7 +506,8 @@ const build = async (config) => {
         ElmVitePlugin({
           mode: 'minify',
           isBodyPatchEnabled: false
-        })
+        }),
+        TailwindcssVitePlugin(),
       ],
       logLevel: 'silent'
     })

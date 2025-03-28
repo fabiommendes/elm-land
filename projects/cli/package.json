@@ -1,6 +1,6 @@
 {
   "name": "elm-land",
-  "version": "0.20.1",
+  "version": "0.20.2",
   "description": "Reliable web apps for everyone",
   "main": "index.js",
   "type": "module",
@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@lydell/elm": "0.19.1-14",
+    "@tailwindcss/vite": "^4.0.17",
     "chokidar": "3.5.3",
     "terser": "5.15.1",
     "typescript": "4.9.3",
